@@ -14,6 +14,9 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   padding: 60px;
   color: #8d8d8d;
+  .error {
+    color: #ff0000;
+  }
   h1 {
     color: #1a1a1a;
   }

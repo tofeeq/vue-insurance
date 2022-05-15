@@ -1,10 +1,9 @@
 <template>
   <div class="container">
-    <h1>Oops!</h1>
+    <h1>Ooops!</h1>
     <p v-html="error"></p>
     <div class="container">
-      <button @click="goback">Back</button>
-      <router-link to="/"><button class="default">Home</button></router-link>
+      <router-link to="/"><button class="default">OK :(</button></router-link>
     </div>
   </div>
 </template>
@@ -15,11 +14,6 @@ export default {
   name: 'ErrorPage',
   computed: {
     ...mapGetters('insurance', ['error']),
-  },
-  methods: {
-    goback() {
-      this.$router.go(-1)
-    },
   },
 }
 </script>
