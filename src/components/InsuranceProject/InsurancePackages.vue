@@ -1,6 +1,7 @@
 <template>
   <div class="container gray p10">
     <div class="form-container">
+      <h3>Select Insurance Package below</h3>
       <div class="form-control">
         <label>
           <input
@@ -18,8 +19,8 @@
             v-model="selectedPackage"
             :value="CONST.INSURANCE_PACKAGE_SAFE"
           />
-          Safe (+{{ packageRate(CONST.INSURANCE_PACKAGE_SAFE) }}
-          {{ selectedCurrency }}, 50%)
+          Safe (+{{ formatPrice(packageRate(CONST.INSURANCE_PACKAGE_SAFE)) }}
+          50%)
         </label>
       </div>
       <div class="form-control">
@@ -29,8 +30,10 @@
             v-model="selectedPackage"
             :value="CONST.INSURANCE_PACKAGE_SUPERSAFE"
           />
-          Super Safe (+{{ packageRate(CONST.INSURANCE_PACKAGE_SUPERSAFE) }}
-          {{ selectedCurrency }}, 75%)
+          Super Safe (+{{
+            formatPrice(packageRate(CONST.INSURANCE_PACKAGE_SUPERSAFE))
+          }}
+          75%)
         </label>
       </div>
     </div>
@@ -50,6 +53,14 @@ export default {
       set(value) {
         this.$store.commit('insurance/setPackage', value)
       },
+    },
+  },
+  methods: {
+    formatPrice(price) {
+      if (price) {
+        return price + this.selectedCurrency + ','
+      }
+      return ''
     },
   },
 }
