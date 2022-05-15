@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Oops!</h1>
-    <p>{{ error }}</p>
+    <p v-html="error"></p>
     <div class="container">
       <button @click="goback">Back</button>
       <router-link to="/"><button class="default">Home</button></router-link>

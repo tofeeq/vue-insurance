@@ -32,7 +32,7 @@ export default {
         return 'Please enter your name'
       }
       if (this.user.age > 100) {
-        return 'Sorry we only support customers upto age 100'
+        return 'Your age is over our accepted limit <br /> We are sorry but we can not insure you now.'
       }
     },
     preview() {
